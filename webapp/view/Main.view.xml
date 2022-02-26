@@ -1,9 +1,34 @@
-<mvc:View controllerName="EWM.PackingTestTool.controller.Main" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+<mvc:View controllerName="EWM.PackingTestTool.controller.Main" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" displayBlock="true"
+	xmlns="sap.m" xmlns:vk="sap.ui.vk">
 	<Shell id="shell">
 		<App id="app">
 			<pages>
 				<Page id="page" title="{i18n>title}">
-					<content></content>
+					<content>
+						<l:Grid class="sapUiTinyMargin" id="main-grid">
+							<VBox>
+								<layoutData>
+									<l:GridData span="XL6 L6 M6 S6"></l:GridData>
+								</layoutData>
+								<HBox>
+									<Input id="length" placeholder="length"></Input>
+									<Input id="width" placeholder="width"></Input>
+									<Input id="height" placeholder="height"></Input>
+								</HBox>
+								<TextArea id="dimension" cols="60" rows="10" placeholder="Dimension"></TextArea>
+								<TextArea id="position" cols="60" rows="10" placeholder="Position"></TextArea>
+								<HBox>
+									<Button id="display" text="Display" press="onDisplay"></Button>
+									<Button id="calculate" text="Calculate" press="onCalculate"></Button>
+								</HBox>
+							</VBox>
+							<vk:Viewer id="viewer" enableToolbar="false" enableSceneTree="false" height="500px" class="sapUiSmallMarginTop">
+								<vk:layoutData>
+									<l:GridData span="XL6 L6 M6 S6"></l:GridData>
+								</vk:layoutData>
+							</vk:Viewer>
+						</l:Grid>
+					</content>
 				</Page>
 			</pages>
 		</App>
