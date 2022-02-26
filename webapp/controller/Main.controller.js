@@ -164,7 +164,8 @@ sap.ui.define([
 			var material = new THREE.MeshBasicMaterial({
 				color: 0xFFFFFF,
 				opacity: 0.3,
-				transparent: true
+				transparent: true,
+				depthWrite:false
 			});
 			var cube = new THREE.Mesh(geometry, material);
 			this.initPosition(cube, "hu", iLength / 2, iHeight / 2, iWidth / 2, "2");
@@ -197,7 +198,8 @@ sap.ui.define([
 			var material = new THREE.MeshBasicMaterial({
 				color: 0x3EABFF,
 				opacity: 0.35,
-				transparent: true
+				transparent: true,
+				side: THREE.DoubleSide
 			});
 			var cube = new THREE.Mesh(geometry, material);
 
